@@ -5,6 +5,7 @@ import (
 	_ "github.com/apache/skywalking-go"
 	"github.com/gin-gonic/gin"
 	"github.com/go-resty/resty/v2"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/redis/go-redis/v9"
 	zlog "github.com/vearne/zaplog"
@@ -27,6 +28,7 @@ func main() {
 		r.Run(":9090")
 	}()
 
+	prometheus.NewRegistry()
 	rdb = redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
 		Password: "xxeQl*@nFE", // 密码

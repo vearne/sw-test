@@ -2,11 +2,10 @@ module github.com/vearne/sw-test
 
 go 1.21.0
 
-replace github.com/apache/skywalking-go v0.0.0-20231219105556-fa6e1d176a5d => github.com/vearne/skywalking-go v0.0.0-20231219105556-fa6e1d176a5d
-
+replace github.com/apache/skywalking-go => github.com/vearne/skywalking-go v0.0.0-20240102114559-6a64db07cd4f
 
 require (
-	github.com/apache/skywalking-go v0.0.0-20231219105556-fa6e1d176a5d
+	github.com/apache/skywalking-go v0.0.0-20240102114559-6a64db07cd4f
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-resty/resty/v2 v2.11.0
 	github.com/prometheus/client_golang v1.18.0
