@@ -6,7 +6,7 @@ clean:
 
 .PHONY: build
 build:
-	go build -toolexec="/var/tmp/skywalking-go-agent" -a -o $(COMMAND_NAME) .
+	go build -mod=vendor -toolexec="/var/tmp/skywalking-go-agent" -a -o $(COMMAND_NAME) .
 
 .PHONY: run
 run:

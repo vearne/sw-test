@@ -142,8 +142,8 @@ github.com/twitchyliquid64/golang-asm v0.15.1 h1:SU5vSMR7hnwNxj24w34ZyCi/FmDZTkS
 github.com/twitchyliquid64/golang-asm v0.15.1/go.mod h1:a1lVb/DtPvCB8fslRZhAngC2+aY1QWCk3Cedj/Gdt08=
 github.com/ugorji/go/codec v1.2.11 h1:BMaWp1Bb6fHwEtbplGBGJ498wD+LKlNSl25MjdZY4dU=
 github.com/ugorji/go/codec v1.2.11/go.mod h1:UNopzCgEMSXjBc6AOMqYvWC1ktqTAfzJZUZgYf6w6lg=
-github.com/vearne/skywalking-go v0.0.0-20240102114559-6a64db07cd4f h1:elAUL8E5kvpvp+u+6KXuUt07/8nm6XV1lMAvZvdIEb8=
-github.com/vearne/skywalking-go v0.0.0-20240102114559-6a64db07cd4f/go.mod h1:r2FrabK/0XftMyosqre7WFZvZ1mEOVssJROo8xgcEW8=
+github.com/vearne/skywalking-go v0.0.0-20240104095445-0c9f8cf9d977 h1:HUncXi5PwCh58cDaGnKSx4xfTvsE8cDwY9Z6NyaTQIk=
+github.com/vearne/skywalking-go v0.0.0-20240104095445-0c9f8cf9d977/go.mod h1:oNEziBQgk2e7NqBUeBrnI9O5E8/Uvh4y7mG6RYMe1lA=
 github.com/vearne/zaplog v0.0.0-20231219045019-1345c525c309 h1:0haqFioaILMnLLGE0u9a6YfK56HnKPcRzzxP9k8ekDc=
 github.com/vearne/zaplog v0.0.0-20231219045019-1345c525c309/go.mod h1:wnPVsAQVVWMOIhg5hHUo5LfM6mIG9rvxaJRVxq0MmqU=
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
