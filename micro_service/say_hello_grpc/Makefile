@@ -1,4 +1,4 @@
-COMMAND_NAME = sw-sayhello-http
+COMMAND_NAME = sw-sayhello-grpc
 
 .PHONY: clean
 clean:
