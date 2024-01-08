@@ -2,10 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/redis/go-redis/v9"
+	zlog "github.com/vearne/zaplog"
+	"go.uber.org/zap"
 	"google.golang.org/grpc/metadata"
 	"log"
 	"net"
 
+	_ "github.com/apache/skywalking-go"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	_ "google.golang.org/grpc/encoding/gzip" // 会完成gzip Compressor的注册
@@ -16,6 +20,8 @@ import (
 const (
 	port = ":50051"
 )
+
+var rdb *redis.Client
 
 type server struct {
 	pb.UnimplementedGreeterServer
@@ -31,10 +37,17 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 	for key, val := range md {
 		fmt.Printf("%v:%v\n", key, val)
 	}
+	val, err := rdb.Incr(context.Background(), "svc-sayHello-grpc").Result()
+	zlog.Info("test hello", zap.Int64("val", val), zap.Error(err))
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
 func main() {
+	zlog.InitLogger("/tmp/sayHelloGrpc.log", "debug")
+	rdb = redis.NewClient(&redis.Options{
+		Addr: "localhost:6379",
+	})
+
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

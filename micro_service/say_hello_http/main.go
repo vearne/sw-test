@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	zlog.InitLogger("/tmp/sayHello.log", "debug")
+	zlog.InitLogger("/tmp/sayHelloHttp.log", "debug")
 	rdb := redis.NewClient(&redis.Options{
 		Addr: "localhost:6379",
 	})
@@ -22,7 +22,7 @@ func main() {
 		for key, val := range r.Header {
 			fmt.Printf("%v:%v\n", key, val)
 		}
-		val, err := rdb.Incr(context.Background(), "sayHello").Result()
+		val, err := rdb.Incr(context.Background(), "svc-sayHello-http").Result()
 		zlog.Info("test hello", zap.Int64("val", val), zap.Error(err))
 
 		fmt.Fprintf(w, "Hello, sw-go")
