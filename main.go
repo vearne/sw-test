@@ -32,11 +32,6 @@ func main() {
 		Addr: "localhost:6379",
 	})
 
-	_, err := rdb.Set(context.Background(), "abc", "def", 0).Result()
-	if err != nil {
-		panic(err)
-	}
-
 	r := gin.Default()
 	r.GET("/hello", func(c *gin.Context) {
 		val, err := rdb.Incr(c, "helloCounter").Result()
