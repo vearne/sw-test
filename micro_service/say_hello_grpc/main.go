@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
 	zlog "github.com/vearne/zaplog"
@@ -10,7 +11,6 @@ import (
 	"net"
 
 	_ "github.com/apache/skywalking-go"
-	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	_ "google.golang.org/grpc/encoding/gzip" // 会完成gzip Compressor的注册
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
