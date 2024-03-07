@@ -102,6 +102,7 @@ func main() {
 			zlog.Info("ping", zap.Int64("setRes", hsetRes), zap.Error(err))
 			return nil
 		})
+		g.Wait()
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
